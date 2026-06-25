@@ -1,0 +1,32 @@
+apply plugin: "com.android.application"
+
+android {
+    namespace "com.questionmaster"
+    ndkVersion "23.1.7779620"
+    compileSdkVersion 33
+    buildToolsVersion "33.0.0"
+
+    defaultConfig {
+        applicationId "com.questionmaster"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.facebook.react:react-native:0.72.7'
+    implementation 'com.facebook.react:react-native-modules:0.72.7'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+}
