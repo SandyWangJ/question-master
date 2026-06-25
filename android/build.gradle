@@ -10,7 +10,17 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
+        mavenLocal()
+        maven {
+            // React Native 的 JSRely 在 node_modules 中
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven {
+            // Android JSC 在 node_modules 中
+            url "$rootDir/../node_modules/jsc-android/dist"
+        }
         mavenCentral()
+        google()
+        maven { url 'https://www.jitpack.io' }
     }
 }

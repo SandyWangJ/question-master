@@ -1,2 +1,7 @@
 rootProject.name = 'QuestionMaster'
+
+// 包含 React Native
+include ':react-native'
+project(':react-native').projectDir = file('../node_modules/react-native/android')
+
 include ':app'
